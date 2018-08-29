@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+        .xo-table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        .xo-table {
+            width: 60%;
+            height: 80%;
+        }
+        
+        td {
+            /*height:100px;*/
+            width: 100px;
+            height: 5em;
+            text-align: center;
+            font-size: 30px
+        }
+        
+        td:hover {
+            background-color: #1E90FF;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .heading {
+            color: #0c95ca
+        }
+        
+        #message{
+            background-color: aqua;
+            color: white
+        }
+    </style>
+</head>
+
+<body style="margin:0;padding:0">
+    <center>
+        <div style="overflow:auto; height:100vh;">
+            <h1 class="heading">X-O Game</h1>
+            <div id="message"></div>  
+            <table class="xo-table">
+                <tr>
+                    <td id="c1"></td>
+                    <td id="c2"></td>
+                    <td id="c3"></td>
+                </tr>
+                <tr>
+                    <td id="c4"></td>
+                    <td id="c5"></td>
+                    <td id="c6"></td>
+                </tr>
+                <tr>
+                    <td id="c7"></td>
+                    <td id="c8"></td>
+                    <td id="c9"></td>
+                </tr>
+            </table>
+        </div>
+    </center>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        var value = 'X';
+        $('td').click(function () {
+            if (this.innerHTML == '') {
+                this.innerHTML = value
+                if (value == 'X') {
+                    value = 'O'
+                }
+                else if (value == 'O') {
+                    value = 'X'
+                }
+            }
+            verify();
+        });
+
+        function c(num) {
+            return $('#c' + num).text();
+        }
+
+        function verify() {
+////            if (c(1) =='') {
+//                console.log(c(1),c(2),c(3))
+////            }
+            
+            function win (winner,cases){
+                var color="#42f47a"               
+                
+                
+//                alert(winner+" Win")
+                
+                $('#c'+cases[0]).css('background-color',color)
+                $('#c'+cases[1]).css('background-color',color)
+                $('#c'+cases[2]).css('background-color',color)
+                
+                $('#message').text(winner+' Win');
+                                
+                
+            }
+            
+             if (c(1) !=''  && c(2)!='' && c(3)!='') {
+                            if (c(1) == c(2) && c(1) == c(3) && c(2) == c(3)) {
+                                win(c(1)    ,  [1,2,3])
+                            }
+                        }
+            
+                        if(c(4)!=''&& c(5)!=''&&c(6)!=''){
+                            if (c(4) == c(5) && c(4) == c(6) && c(5) == c(6)) {
+                            win(c(5),[4,5,6])
+                        }
+                        }
+                        
+                        
+                         if(c(7)!=''&&(c(1))&& c(8)!=''&&c(9)!=''){
+                             if (c(7) == c(8) && c(7) == c(9) && c(8) == c(9)) {
+                          win(c(7),[7,8,9])
+                        } 
+                         }
+                        
+                        
+                         if(c(1)!=''&& c(4)!=''&& c(7)!=''){
+                             
+                        if (c(1) == c(4) && c(1) == c(7) && c(4) == c(7)) {
+                            win(c(7),[1,4,7])
+                            
+                        }
+                         }
+                        
+                        if(c(2)!=''&& c(5)!=''&&c(8)!=''){
+                             if (c(2) == c(5) && c(2) == c(8) && c(5) == c(8)) {
+                            win(c(5),[2,5,8])
+                        }
+                        } 
+                        
+                       
+                        if(c(3)!=''&& c(6)!=''&&c(9)!=''){
+                            if (c(3) == c(6) && c(3) == c(9) && c(6) == c(9)) {
+                           win(c(6),[3,6,9])
+                        }
+                        }
+                        
+                        
+                        if(c(1)!=''&& c(5)!=''&&c(9)!=''){                
+                        if (c(1) == c(5) && c(1) == c(9) && c(5) == c(9)) {
+                            win(c(9),[1,5,9])
+                        }
+                        }
+
+                        if(c(3)!=''&&c(5)!=''&&c(7)!=''){
+                            if (c(3) == c(5) && c(3) == c(7) && c(5) == c(7)) {
+                            win(c(3),[3,5,7])
+                        }
+                        }
+
+           
+        }
+    </script>
+</body>
+
+</html>

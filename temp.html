@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+        .xo-table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        .xo-table {
+            width: 60%;
+            height: 80%;
+        }
+        
+        td {
+            /*height:100px;*/
+            width: 100px;
+            height: 5em;
+            text-align: center;
+            font-size: 30px
+        }
+        
+        td:hover {
+            background-color: #1E90FF;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .heading {
+            color: #0c(9)5ca
+        }
+    </style>
+</head>
+
+<body style="margin:0;padding:0">
+    <center>
+        <div style="overflow:auto; height:100vh;">
+            <h1 class="heading">X-O Game</h1>
+            <table class="xo-table">
+                <tr>
+                    <td id="c(1)"></td>
+                    <td id="c(2)"></td>
+                    <td id="c(3)"></td>
+                </tr>
+                <tr>
+                    <td id="c(4)"></td>
+                    <td id="c(5)"></td>
+                    <td id="c(6)"></td>
+                </tr>
+                <tr>
+                    <td id="c(7)"></td>
+                    <td id="c(8)"></td>
+                    <td id="c(9)"></td>
+                </tr>
+            </table>
+        </div>
+    </center>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        var value = 'X';
+        $('td').click(function () {
+            if (this.innerHTML == '') {
+                this.innerHTML = value
+                if (value == 'X') {
+                    value = 'O'
+                }
+                else if (value == 'O') {
+                    value = 'X'
+                }
+                verify();
+            }
+            
+        });
+
+        function c(num) {
+            return $('#c' + num).text();
+        }
+
+        function verify() {
+
+
+                        if (c(1) !=''  && c(2)!='' && c(3)!='') {
+                            if (c(1) == c(2) && c(1) == c(3) && c(2) == c(3)) {
+                                alert("you win")
+                            }
+                            console.log(c(1),c(2),c(3))
+                            
+                        
+                        }
+            
+                        if(c(4)!=''&& c(5)!=''&&c(6)!=''){
+                            if (c(4) == c(5) && c(4) == c(6) && c(5) == c(6)) {
+                            alert("you win")
+                        }
+                        }
+                        
+                        
+                         if(c(7)!=''&& c(8)!=''&&c(9)!=''){
+                             if (c(7) == c(8) && c(7) == c(9) && c(8) == c(9)) {
+                            alert("you win")
+                        } 
+                         }
+                        
+                        
+                         if(c(1)!=''&& c(4)!=''&&c(7)!=''){
+                             
+                        if (c(1) == c(4) && c(1) == c(7) && c(4) == c(7)) {
+                            alert("you win")
+                        }
+                         }
+                        
+                        if(c(2)!=''&& c(5)!=''&&c(8)!=''){
+                             if (c(2) == c(5) && c(2) == c(8) && c(5) == c(8)) {
+                            alert("you win")
+                        }
+                        } if (c(2) == c(5) && c(2) == c(8) && c(5) == c(8)) {
+                            alert("you win")
+                        }
+                        
+                       
+                        if(c(3)!=''&& c(6)!=''&&c(9)!=''){
+                            if (c(3) == c(6) && c(3) == c(9) && c(6) == c(9)) {
+                            alert("you win")
+                        }
+                        }
+                        
+                        
+                        if(c(1)!=''&& c(5)!=''&&c(9)!='')
+                        
+                        if (c(1) == c(5) && c(1) == c(9) && c(5) == c(9)) {
+                            alert("you win")
+                        }
+                        if(c(3)!=''&&c(5)!=''&&c(7)!=''){
+                            if (c(3) == c(5) && c(3) == c(7) && c(5) == c(7)) {
+                            alert("you win")
+                        }
+                        }
+                        
+        }
+    </script>
+</body>
+
+</html>
