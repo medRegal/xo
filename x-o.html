@@ -3,22 +3,31 @@
 
 <head>
     <title></title>
+    
     <style>
         .xo-table,
         th,
         td {
-            border: 1px solid black;
+            border: 3px solid black;
             border-collapse: collapse;
         }
         
-
-        
-        backgroundcolor:#808080;
-        
+        body{
+  background-image: url("images/ciel.jpg");
+            background-size:cover
+        }   
      
+        .avatar{
+            width: 10%;
+    height: 10%;
+    border-radius: 50%;
+}
+        
+        
+        
         
         .xo-table {
-            width: 60%;
+            width: 50%;
             height: 80%;
         }
 
@@ -31,33 +40,47 @@
         }
         
         td:hover {
-            background-color: #1E90FF;
+            background-color:rgba(130, 130, 130, 0.4);
+/*                #0c95ca;*/
             color: #fff;
             cursor: pointer;
         }
         
         .heading {
-            color: #0c95ca
+            color: #ffffff;
+            font-size: 50px
         }
         
         #message{
-            background-color: aqua;
-            color: white
+            background-color:#000000;
+            color: grey;
+            width: 90px
+        }
+        .clear-button{
+            float:left;
+        
         }
     </style>
 </head>
+    
+  
+    
 
-     <style>   
-    
-    backgroundcolor:#808080; 
-    
-    </style>
     
 <body style="margin:0;padding:0">
-    <center>
+  
+ 
+
+    
         <div style="overflow:auto; height:100vh;">
+            <div>
+                <img class="avatar" style="float: right" src="images/images.jpg">
+   	<img class="avatar" style="float: left" src="images/simo-avatar.png">
+            </div> 
+            <center>
             <h1 class="heading">X-O Game</h1>
             <div id="message"></div>  
+            <button class="clear-button" onclick="document.location.reload()">Clear</button>
             <table class="xo-table">
                 <tr>
                     <td id="c1"></td>
@@ -105,7 +128,7 @@
             function win (winner,cases){
                 var color="#42f47a"               
                 
-                
+
 //                alert(winner+" Win")
                 
                 $('#c'+cases[0]).css('background-color',color)
@@ -170,9 +193,18 @@
                             win(c(3),[3,5,7])
                         }
                         }
+    }
+        
+        
+        
 
-           
-        }
+  
+        
+        
+        
+        
+        
+    
     </script>
 </body>
 
